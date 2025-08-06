@@ -1,0 +1,23 @@
+[package]
+name = "ai_upscaler"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "upscaler"
+path = "src/bin/upscaler.rs"
+
+[features]
+gpu = ["ort/cuda"]   # enable with: --features gpu
+default = []         # CPU by default
+
+[dependencies]
+anyhow = "1"
+image = "0.25"
+ndarray = "0.16"
+num_cpus = "1"
+clap = { version = "4", features = ["derive", "env"] }
+
+# ORT v2 RC with ndarray helpers (CPU by default; add "gpu" feature for CUDA)
+ort = { version = "2.0.0-rc.10", default-features = false, features = ["download-binaries", "ndarray"] }
+

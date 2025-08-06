@@ -1,0 +1,30 @@
+# Rust
+/target
+**/*.rs.bk
+Cargo.lock
+
+# VS Code & JetBrains IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# ONNX models (if you don’t want to commit them)
+models/*.onnx
+!models/README.md
+
+# Image outputs
+samples/*.png
+samples/*.jpg
+samples/*.jpeg
+
+# Python virtual environments (if any for preprocessing scripts)
+.venv/
+env/
+venv/
+
+# Misc
+*.log
+*.tmp
+*.swp
+.DS_Store
+
